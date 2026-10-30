@@ -53,6 +53,8 @@ export const plantsArray = [
   },
 ];
 
+const fallbackPlantImage = 'https://cdn.pixabay.com/photo/2021/01/22/06/04/snake-plant-5939187_1280.jpg';
+
 function ProductList({ onHomeClick }) {
   const [showCart, setShowCart] = useState(false);
   const [showPlants, setShowPlants] = useState(true);
@@ -133,7 +135,16 @@ function ProductList({ onHomeClick }) {
                   return (
                     <article className="product-card" key={plant.id}>
                       <div className="product-image-wrap">
-                        <img className="product-image" src={plant.image} alt={plant.name} loading="lazy" />
+                        <img
+                          className="product-image"
+                          src={plant.image}
+                          alt={plant.name}
+                          loading="lazy"
+                          onError={(event) => {
+                            event.currentTarget.onerror = null;
+                            event.currentTarget.src = fallbackPlantImage;
+                          }}
+                        />
                         <span className="product-tag">Indoor favourite</span>
                       </div>
                       <div className="product-info">
