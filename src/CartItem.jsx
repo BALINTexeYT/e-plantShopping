@@ -56,7 +56,7 @@ const CartItem = ({ onContinueShopping }) => {
                 <img className="cart-item-image" src={item.image} alt={item.name} />
                 <div className="cart-item-details">
                   <div className="cart-item-topline"><div><h2 className="cart-item-name">{item.name}</h2><p className="cart-item-cost">{item.cost} <span>each</span></p></div>
-                    <button className="cart-item-delete" type="button" onClick={() => handleRemove(item)} aria-label={`Remove ${item.name} from cart`}>Remove</button>
+                    <button className="cart-item-delete" type="button" onClick={() => handleRemove(item)} aria-label={`Remove ${item.name} from cart`}>Delete</button>
                   </div>
                   <div className="cart-item-bottomline">
                     <div className="cart-item-quantity" aria-label={`Quantity: ${item.quantity}`}>
