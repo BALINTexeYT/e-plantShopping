@@ -20,6 +20,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #d9a441; outline-offs
   z-index: 3;
   display: grid;
   align-items: center;
+  overflow: hidden;
   overflow-y: auto;
   opacity: 1;
   visibility: visible;
